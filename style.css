@@ -1,0 +1,173 @@
+/* =========================
+   DFIR Resource Collection
+   Main Stylesheet
+   ========================= */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page setup */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111827;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* Main content width */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Header */
+header {
+    background-color: #0b1120;
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 1px solid #374151;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+header p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #1f2937;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #374151;
+    color: #ffffff;
+}
+
+section h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px;
+}
+
+/* Lists */
+ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Source cards */
+.source-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.source-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.category {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    color: #60a5fa;
+}
+
+a:hover {
+    color: #93c5fd;
+}
+
+/* Resource button */
+.resource-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.resource-link:hover {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background-color: #0b1120;
+    color: #9ca3af;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 1px solid #374151;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .source-card {
+        padding: 18px;
+    }
+}
