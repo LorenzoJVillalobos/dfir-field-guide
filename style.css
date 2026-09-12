@@ -1,173 +1,365 @@
-/* =========================
+/* ========================================
    DFIR Resource Collection
-   Main Stylesheet
-   ========================= */
+   Lorenzo Villalobos
+======================================== */
 
-/* Basic reset */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Page setup */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #111827;
-    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
+
+    color: #2d2d2d;
+    background-color: #ece7dd;
 }
 
-/* Main content width */
-main {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 0;
+h1,
+h2,
+h3 {
+    font-family: "Lora", serif;
 }
 
-/* Header */
+
+/* ========================================
+   Header
+======================================== */
+
 header {
-    background-color: #0b1120;
-    padding: 50px 20px;
+    padding: 3.5rem 1.5rem;
+    color: #f5f1e8;
+    background-color: #2f4f3e;
     text-align: center;
-    border-bottom: 1px solid #374151;
+    border-bottom: 4px solid #7a8f69;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    line-height: 1.15;
 }
 
 header p {
-    color: #9ca3af;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #f0ece3;
     font-size: 1.1rem;
 }
 
-/* Navigation */
+
+/* ========================================
+   Navigation
+======================================== */
+
 nav {
-    background-color: #1f2937;
-    padding: 15px;
+    padding: 1rem;
+    background-color: #d8cbb3;
     text-align: center;
+    border-bottom: 1px solid #7a8f69;
 }
 
 nav a {
-    color: #d1d5db;
+    display: inline-block;
+    margin: 0.25rem 0.65rem;
+    padding: 0.4rem 0.15rem;
+
+    color: #2f4f3e;
     text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
+    font-weight: 700;
+
+    border-bottom: 2px solid transparent;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-nav a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+nav a:hover,
+nav a:focus {
+    color: #3b5a46;
+    border-color: #2f4f3e;
 }
 
-/* Sections */
+
+/* Back to Portfolio button */
+
+nav .portfolio-link {
+    padding: 0.55rem 0.9rem;
+
+    color: #f5f1e8;
+    background-color: #2f4f3e;
+
+    border: 2px solid #2f4f3e;
+    border-radius: 6px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+nav .portfolio-link:hover,
+nav .portfolio-link:focus {
+    color: #2f4f3e;
+    background-color: #f5f1e8;
+    border-color: #2f4f3e;
+
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(45, 45, 45, 0.18);
+}
+
+
+/* ========================================
+   Main Content
+======================================== */
+
+main {
+    flex: 1;
+
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
 section {
-    margin-bottom: 50px;
+    margin-bottom: 4rem;
 }
 
 section h2 {
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #374151;
-    color: #ffffff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+
+    color: #2f4f3e;
+
+    border-bottom: 3px solid #7a8f69;
 }
 
-section h3 {
-    margin-top: 25px;
-    margin-bottom: 10px;
+section > h3 {
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+
+    color: #2f4f3e;
 }
 
-/* Paragraphs */
 p {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-/* Lists */
-ul {
-    margin-left: 25px;
-    margin-bottom: 20px;
+
+/* ========================================
+   Organizational Structure
+======================================== */
+
+#organization {
+    padding: 2rem;
+
+    background-color: #f5f1e8;
+
+    border-top: 5px solid #7a8f69;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(45, 45, 45, 0.08);
 }
 
-li {
-    margin-bottom: 8px;
+#organization h3 {
+    color: #3b5a46;
 }
 
-/* Source cards */
+
+/* ========================================
+   Source Cards
+======================================== */
+
 .source-card {
-    background-color: #1f2937;
-    border: 1px solid #374151;
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 1.75rem;
+    padding: 2rem;
+
+    background-color: #f5f1e8;
+
+    border-top: 5px solid #7a8f69;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(45, 45, 45, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.source-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2f4f3e;
+
+    box-shadow: 0 14px 28px rgba(45, 45, 45, 0.16);
 }
 
 .source-card h3 {
     margin-top: 0;
-    color: #ffffff;
+    margin-bottom: 0.75rem;
+
+    color: #2f4f3e;
 }
 
 .category {
-    color: #9ca3af;
+    margin-bottom: 0.5rem;
+
+    color: #59665d;
+
     font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-weight: 600;
 }
 
-/* Links */
+.citation {
+    margin: 1rem 0;
+    padding-left: 1rem;
+
+    color: #4d554f;
+
+    border-left: 4px solid #d8cbb3;
+}
+
+
+/* ========================================
+   Resource Links
+======================================== */
+
 a {
-    color: #60a5fa;
+    color: #2f4f3e;
 }
 
-a:hover {
-    color: #93c5fd;
-}
-
-/* Resource button */
 .resource-link {
     display: inline-block;
-    margin-top: 10px;
-    padding: 8px 14px;
-    background-color: #2563eb;
-    color: #ffffff;
+
+    margin-top: 0.75rem;
+    padding: 0.75rem 1.1rem;
+
+    color: #f5f1e8;
+    background-color: #2f4f3e;
+
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: 700;
+
+    border: 2px solid #2f4f3e;
+    border-radius: 6px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.resource-link:hover {
-    background-color: #1d4ed8;
-    color: #ffffff;
+.resource-link:hover,
+.resource-link:focus {
+    color: #2f4f3e;
+    background-color: #d8cbb3;
+    border-color: #7a8f69;
+
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(45, 45, 45, 0.18);
 }
 
-/* Footer */
+
+/* ========================================
+   Tool Selection
+======================================== */
+
+#tool {
+    padding: 2rem;
+
+    background-color: #d8cbb3;
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(45, 45, 45, 0.08);
+}
+
+#tool h2 {
+    color: #2f4f3e;
+    border-bottom-color: #7a8f69;
+}
+
+
+/* ========================================
+   Footer
+======================================== */
+
 footer {
-    background-color: #0b1120;
-    color: #9ca3af;
+    padding: 1.5rem;
+
+    color: #f5f1e8;
+    background-color: #2f4f3e;
+
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    border-top: 1px solid #374151;
+
+    border-top: 4px solid #7a8f69;
 }
 
-/* Mobile layout */
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+   Accessibility
+======================================== */
+
+a:focus-visible {
+    outline: 3px solid #7a8f69;
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
 @media (max-width: 700px) {
 
+    header {
+        padding: 2.5rem 1rem;
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
+    }
+
+    nav {
+        padding: 1rem;
     }
 
     nav a {
         display: block;
-        margin: 8px 0;
+        width: fit-content;
+        margin: 0.45rem auto;
+    }
+
+    nav .portfolio-link {
+        margin-bottom: 1rem;
     }
 
     main {
         width: 92%;
+        padding: 2rem 0;
     }
 
-    .source-card {
-        padding: 18px;
+    .source-card,
+    #organization,
+    #tool {
+        padding: 1.4rem;
     }
 }
