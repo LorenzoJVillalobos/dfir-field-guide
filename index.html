@@ -966,7 +966,136 @@
         </a>
 
     </div>
+    <!-- Sigma -->
+<div class="source-card">
 
+    <h3>
+        Sigma – Generic Detection Rule Format
+    </h3>
+
+    <p class="category">
+        Category: Threat Analysis and Investigation &gt; Detection Engineering
+    </p>
+
+    <p class="category">
+        Source Type: Open-Source Detection Standard and Rule Collection
+    </p>
+
+    <p class="citation">
+        SigmaHQ.
+        <em>Sigma: Generic Signature Format for SIEM Systems.</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        Sigma is an open detection-rule format used to describe suspicious
+        activity found in log data. Rules identify specific patterns,
+        behaviors, log sources, and conditions that may indicate malicious
+        activity. The Sigma project also maintains a large community
+        collection of detection rules that can be adapted for different
+        security platforms and SIEM systems.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        Sigma helps connect threat behavior to actual security monitoring.
+        Instead of focusing only on indicators such as IP addresses or file
+        hashes, analysts can create detections based on attacker behavior.
+        This complements MITRE ATT&amp;CK because ATT&amp;CK describes how
+        adversaries operate, while Sigma provides a practical way to detect
+        some of those behaviors in security logs.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        SOC analysts, threat hunters, incident responders, detection
+        engineers, and students learning how security monitoring supports
+        investigations would benefit from Sigma.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        Sigma rules depend on the quality and availability of log data.
+        Rules may also require modification for a specific environment or
+        SIEM platform and can produce false positives if they are used
+        without testing and tuning.
+    </p>
+
+    <a class="resource-link"
+       href="https://sigmahq.io/"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
+
+
+<!-- MISP -->
+<div class="source-card">
+
+    <h3>
+        MISP – Open Source Threat Intelligence Platform
+    </h3>
+
+    <p class="category">
+        Category: Threat Analysis and Investigation &gt; Threat Intelligence Sharing
+    </p>
+
+    <p class="category">
+        Source Type: Open-Source Threat Intelligence Platform
+    </p>
+
+    <p class="citation">
+        MISP Project.
+        <em>MISP Open Source Threat Intelligence and Sharing Platform.</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        MISP is an open-source platform for collecting, storing, analyzing,
+        correlating, and sharing threat intelligence. Analysts can use it
+        to organize indicators of compromise, malware information, threat
+        actor data, attack techniques, and other intelligence connected to
+        cybersecurity incidents. MISP also supports taxonomies, feeds,
+        automation, APIs, and integration with other security tools.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        MISP demonstrates how information discovered during one investigation
+        can become useful intelligence for future investigations. Indicators
+        and related information can be shared between analysts and
+        organizations, allowing teams to identify relationships between
+        attacks, campaigns, malware, and threat actors. It also works well
+        alongside MITRE ATT&amp;CK by helping analysts organize intelligence
+        about adversary behavior.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        Threat intelligence analysts, SOC teams, incident responders,
+        investigators, and students learning how intelligence supports
+        cybersecurity investigations would benefit from MISP.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        MISP can be complex for beginners because effective use requires
+        understanding indicators, threat intelligence, sharing models,
+        tagging, and correlation. The quality of the intelligence also
+        depends on the accuracy and reliability of the data being entered
+        or received from other sources.
+    </p>
+
+    <a class="resource-link"
+       href="https://www.misp-project.org/"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
 
     <!-- Hands-On Practice -->
     <h3>Hands-On Practice</h3>
