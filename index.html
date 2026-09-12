@@ -650,7 +650,261 @@
         </a>
 
     </div>
+<!-- Autopsy -->
+<div class="source-card">
 
+    <h3>
+        Autopsy – Digital Forensics Platform
+    </h3>
+
+    <p class="category">
+        Category: Digital Forensics Tools and Techniques &gt; Disk and File System Analysis
+    </p>
+
+    <p class="category">
+        Source Type: Digital Forensics Tool
+    </p>
+
+    <p class="citation">
+        Sleuth Kit Labs.
+        <em>Autopsy Digital Forensics Platform.</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        Autopsy is an open-source digital forensics platform built around
+        The Sleuth Kit and other forensic tools. Investigators can use it
+        to examine disk images, hard drives, logical files, and other data
+        sources while searching for evidence such as deleted files, web
+        activity, user files, timelines, and other system artifacts.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        Autopsy is valuable for beginners because it provides a graphical
+        interface instead of requiring every forensic task to be completed
+        from the command line. It gives learners experience creating cases,
+        adding evidence sources, examining artifacts, and organizing findings
+        in a way that resembles a real forensic investigation.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        Students, new digital forensic investigators, law enforcement
+        personnel, and cybersecurity professionals learning disk and file
+        system analysis would benefit from using Autopsy.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        Although the interface makes forensic analysis easier to approach,
+        users still need to understand the artifacts they are examining.
+        Processing large forensic images can also require significant storage,
+        memory, and processing time.
+    </p>
+
+    <a class="resource-link"
+       href="https://www.sleuthkit.org/autopsy/"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
+
+
+<!-- Volatility 3 -->
+<div class="source-card">
+
+    <h3>
+        Volatility 3 – Volatile Memory Analysis Framework
+    </h3>
+
+    <p class="category">
+        Category: Digital Forensics Tools and Techniques &gt; Memory Forensics
+    </p>
+
+    <p class="category">
+        Source Type: Open-Source Forensics Tool
+    </p>
+
+    <p class="citation">
+        Volatility Foundation.
+        <em>Volatility 3: The Volatile Memory Extraction Framework.</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        Volatility 3 is a digital forensics framework used to extract and
+        analyze artifacts from volatile memory, or RAM. Investigators can
+        examine memory images for information about running processes,
+        network activity, loaded modules, system information, and other
+        evidence that may only exist while a computer is operating.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        Memory forensics provides a different view of an incident than disk
+        analysis alone. Information found in RAM can help investigators
+        identify malware, suspicious processes, network connections, and
+        other activity that may not be obvious from files stored on a drive.
+        Volatility is widely used within the DFIR community and provides a
+        practical way to learn this type of analysis.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        Students who already understand basic forensic concepts and want to
+        move into memory analysis, malware investigation, or incident response
+        would benefit most from this resource.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        Volatility does not acquire memory itself, so investigators need a
+        memory image collected with another tool. It is also command-line
+        based and requires more technical knowledge than graphical tools,
+        which may make it challenging for complete beginners.
+    </p>
+
+    <a class="resource-link"
+       href="https://github.com/volatilityfoundation/volatility3"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
+
+
+<!-- KAPE -->
+<div class="source-card">
+
+    <h3>
+        KAPE – Kroll Artifact Parser and Extractor
+    </h3>
+
+    <p class="category">
+        Category: Digital Forensics Tools and Techniques &gt; Artifact Collection and Triage
+    </p>
+
+    <p class="category">
+        Source Type: Forensic Collection and Processing Tool
+    </p>
+
+    <p class="citation">
+        Kroll.
+        <em>Kroll Artifact Parser and Extractor (KAPE).</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        KAPE is a forensic triage tool designed to quickly locate, collect,
+        and process artifacts that may be important during a digital
+        investigation. It uses configurable targets to identify files and
+        artifacts and modules to process the collected information using
+        forensic utilities.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        KAPE is valuable because investigators do not always have time to
+        wait for a complete forensic image before beginning analysis. It can
+        collect important artifacts quickly and help investigators identify
+        which systems or evidence sources deserve additional attention.
+        This makes it useful for incident response situations where speed
+        can be important.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        Students learning Windows forensics, incident responders, digital
+        forensic investigators, and analysts who need to understand forensic
+        triage would benefit from learning KAPE.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        KAPE requires an understanding of the artifacts being collected and
+        how its targets and modules work. Its licensing also varies by use.
+        Kroll allows educational, research, government, and internal company
+        use, but commercial use on third-party networks or as part of a paid
+        engagement is restricted.
+    </p>
+
+    <a class="resource-link"
+       href="https://www.kroll.com/en/services/cyber/reactive-services/kroll-artifact-parser-and-extractor-kape"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
+
+
+<!-- Wireshark -->
+<div class="source-card">
+
+    <h3>
+        Wireshark – Network Protocol Analyzer
+    </h3>
+
+    <p class="category">
+        Category: Digital Forensics Tools and Techniques &gt; Network Forensics
+    </p>
+
+    <p class="category">
+        Source Type: Network Analysis Tool
+    </p>
+
+    <p class="citation">
+        Wireshark Foundation.
+        <em>Wireshark Network Protocol Analyzer.</em>
+    </p>
+
+    <p>
+        <strong>What it covers:</strong>
+        Wireshark is an open-source network protocol analyzer that allows
+        investigators to capture live network traffic or examine previously
+        collected packet capture files. It provides detailed information
+        about network protocols, IP addresses, communication sessions,
+        packet contents, and other activity moving across a network.
+    </p>
+
+    <p>
+        <strong>Why it's valuable:</strong>
+        Network traffic can provide important evidence during an incident,
+        especially when investigators need to determine which systems
+        communicated, what protocols were used, or whether suspicious
+        connections occurred. Wireshark allows learners to see network
+        activity at the packet level and connects networking knowledge
+        directly to incident investigation.
+    </p>
+
+    <p>
+        <strong>Who would benefit:</strong>
+        Students with basic networking knowledge, SOC analysts, incident
+        responders, and investigators learning network forensics would
+        benefit from this tool.
+    </p>
+
+    <p>
+        <strong>Limitations:</strong>
+        Wireshark can be overwhelming when analyzing large packet captures,
+        and understanding the results requires knowledge of networking and
+        common protocols. Encryption can also prevent investigators from
+        viewing the actual contents of some communications even when the
+        traffic itself is visible.
+    </p>
+
+    <a class="resource-link"
+       href="https://www.wireshark.org/"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Resource
+    </a>
+
+</div>
 
     <!-- Threat Analysis and Investigation -->
     <h3>Threat Analysis and Investigation</h3>
