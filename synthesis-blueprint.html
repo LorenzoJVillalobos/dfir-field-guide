@@ -98,6 +98,99 @@
     </nav>
 
     <main>
+        <section id="overview">
+            <h2>Assignment 02: Synthesis Blueprint</h2>
+            <p>This synthesis project builds on my <a href="index.html">DFIR Field Guide</a> by transforming the resources I collected during Project 01 into a practical investigation roadmap for people entering Digital Forensics and Incident Response.</p>
+            <p>Project 01 focused on finding, evaluating, and organizing useful DFIR resources. For Project 02, I want to take the next step and show how those resources fit together during an actual investigation.</p>
+            <p>Instead of presenting another collection of tools and references, this project will explain how a cybersecurity incident moves from initial response through evidence preservation, examination, analysis, and continued training.</p>
+        </section>
+
+        <section id="audience">
+            <h2>1. Audience Profile</h2>
+            <p>My target audience is students, career changers, and entry-level cybersecurity professionals who are interested in Digital Forensics and Incident Response but do not yet have formal experience conducting an investigation.</p>
+            <p>The audience may already understand basic computer systems, networking, cybersecurity terminology, or operating systems. They may also have experimented with cybersecurity labs or tools. However, I do not assume that they already understand how a DFIR investigation is structured or how individual forensic tools fit into the larger investigative process.</p>
+            <p>One of the problems I found while building my Project 01 collection is that there is a large amount of DFIR information available, but it can be difficult for someone new to the field to understand where everything fits. A beginner may find tools such as Autopsy, Volatility, KAPE, or Wireshark without understanding when an investigator would use them, what type of evidence they examine, or how the results contribute to an investigation.</p>
+            <p>My goal is to fill that gap by creating a practical roadmap of the investigative process. The product will explain how an incident progresses from initial response through evidence preservation, examination, analysis, and reporting.</p>
+            <p>The guide is intended to be useful both as an introduction and as a reference. Someone learning DFIR could read it from beginning to end to understand the overall process, then return to individual sections later while completing labs, studying forensic tools, or practicing investigations.</p>
+        </section>
+
+        <section id="format">
+            <h2>2. Format Choice</h2>
+            <p>I am creating a <strong>beginner-focused DFIR investigation primer and reference guide</strong> organized around the major stages of a digital investigation.</p>
+            <p>I chose this format because my intended audience does not need another list of cybersecurity tools or links. They need to understand how the pieces connect.</p>
+            <p>Organizing the information around the investigative process will allow readers to see what should happen first, why evidence must be preserved, what types of tools may be appropriate during different stages, how investigators interpret their findings, and how those findings eventually become investigative conclusions.</p>
+        </section>
+
+        <section id="outline">
+            <h2>3. Annotated Outline</h2>
+
+            <div class="source-card">
+                <h3>1. Recognizing an Incident and Starting the Investigation</h3>
+                <p>This section will introduce what happens when suspicious activity is first discovered. It will explain why investigators must determine the scope of the incident, document their actions, establish responsibilities, and begin the response process without unnecessarily changing or destroying potential evidence.</p>
+                <p>The goal of this section is to show that an investigation begins before forensic software is ever opened. Decisions made during the first stages of an incident can affect the evidence available later.</p>
+                <p class="citation"><strong>Sources:</strong><br>NIST SP 800-61 Rev. 3 – <em>Incident Response Recommendations and Considerations for Cybersecurity Risk Management</em><br>CISA – <em>Federal Government Cybersecurity Incident and Vulnerability Response Playbooks</em></p>
+            </div>
+
+            <div class="source-card">
+                <h3>2. Protecting and Preserving Digital Evidence</h3>
+                <p>Before evidence can be analyzed, it must be collected and preserved correctly. This section will introduce evidence integrity, documentation, forensic acquisition, and the importance of avoiding unnecessary changes to original evidence.</p>
+                <p>It will also explain why evidence handling is part of the investigation itself rather than simply preparation for analysis. If investigators cannot demonstrate that evidence was collected and handled correctly, the reliability of their later findings can be questioned.</p>
+                <p class="citation"><strong>Sources:</strong><br>NIST SP 800-86 – <em>Guide to Integrating Forensic Techniques into Incident Response</em><br>SWGDE – <em>Best Practices for Computer Forensic Acquisition</em></p>
+            </div>
+
+            <div class="source-card">
+                <h3>3. Beginning Endpoint Triage</h3>
+                <p>This section will explain what investigators may examine first on an affected computer and how forensic triage can help determine where deeper analysis is needed.</p>
+                <p>It will introduce common Windows forensic artifacts such as Prefetch, LNK files, USB device history, UserAssist, and other evidence of user or system activity. It will also introduce tools such as KAPE that can quickly collect important forensic artifacts when investigators need information without immediately performing a complete forensic examination of a system.</p>
+                <p>The goal is to help beginners understand that investigators do not always begin by examining every file on a computer. Triage helps identify the evidence that deserves the most attention.</p>
+                <p class="citation"><strong>Sources:</strong><br>13Cubed – <em>Introduction to Windows Forensics</em><br>KAPE – <em>Kroll Artifact Parser and Extractor</em></p>
+            </div>
+
+            <div class="source-card">
+                <h3>4. Examining and Connecting the Evidence</h3>
+                <p>Once evidence has been preserved and collected, investigators need to determine what actually happened. This section will explain how different evidence sources can provide different pieces of the same investigation.</p>
+                <p>Disk and file-system analysis can reveal stored files, deleted information, user activity, and system artifacts. Memory analysis can reveal running processes, network connections, loaded modules, and information that may only have existed while the computer was operating.</p>
+                <p>Network evidence can provide another perspective by showing communication between systems, protocols being used, and possible suspicious connections.</p>
+                <p>The purpose of this section is to show that investigators rarely rely on a single artifact. Conclusions are usually developed by connecting evidence from multiple sources.</p>
+                <p class="citation"><strong>Sources:</strong><br>Autopsy – <em>Digital Forensics Platform</em><br>Volatility 3 – <em>Volatile Memory Analysis Framework</em></p>
+            </div>
+
+            <div class="source-card">
+                <h3>5. Connecting Evidence to Attacker Behavior</h3>
+                <p>Finding an unusual file, process, or network connection is only part of an investigation. Investigators must determine what those findings mean and how they relate to the activity that occurred.</p>
+                <p>This section will introduce MITRE ATT&amp;CK as a way to describe known attacker tactics and techniques. It will demonstrate how evidence discovered during an investigation can be connected to patterns of adversary behavior.</p>
+                <p>Sigma will also be introduced as an example of how attacker behavior can be translated into detection logic that may help identify similar activity in security logs.</p>
+                <p>This section will help move the reader from simply finding artifacts toward interpreting what those artifacts may reveal about an incident.</p>
+                <p class="citation"><strong>Sources:</strong><br>MITRE – <em>Getting Started with ATT&amp;CK</em><br>Sigma – <em>Generic Detection Rule Format</em></p>
+            </div>
+
+            <div class="source-card">
+                <h3>6. Building Investigation Skills Through Practice</h3>
+                <p>The final section will focus on moving from understanding the investigative process to actually performing investigations.</p>
+                <p>DFIR is a field where reading about tools and procedures is not enough. Investigators need experience working with forensic images, packet captures, system artifacts, logs, and other forms of evidence.</p>
+                <p>This section will recommend beginning with controlled forensic datasets and then progressing into more realistic investigation scenarios. Resources such as the NIST CFReDS Hacking Case and CyberDefenders allow learners to practice examining evidence, answering investigative questions, and developing conclusions.</p>
+                <p>The goal is to give the reader a clear next step after completing the guide instead of ending with theory.</p>
+                <p class="citation"><strong>Sources:</strong><br>NIST CFReDS – <em>Hacking Case</em><br>CyberDefenders – <em>Blue Team Labs</em></p>
+            </div>
+        </section>
+
+        <section id="synthesis">
+            <h2>From Curation to Synthesis</h2>
+            <p>The DFIR Field Guide created during Project 01 answered the question:</p>
+            <p><strong>“Where can someone beginning DFIR find reliable resources, tools, and training?”</strong></p>
+            <p>This synthesis project asks a different question:</p>
+            <p><strong>“How does a Digital Forensics and Incident Response investigation actually work?”</strong></p>
+            <p>The resources from the original collection will support the new product, but the organization will no longer be based primarily on categories of resources. Instead, the information will be reorganized around the investigative process.</p>
+            <p>The finished product will guide a beginner through the progression from recognizing an incident to preserving evidence, examining artifacts, interpreting attacker behavior, and developing practical investigative skills.</p>
+        </section>
+
+        <section id="connections">
+            <h2>Project Connections</h2>
+            <p>This project is part of a larger collection of work documenting my development in Digital Forensics and Incident Response.</p>
+            <p><strong>Project 01:</strong><br><a href="index.html">DFIR Field Guide</a></p>
+            <p><strong>Project 02:</strong><br>DFIR First Steps: A Beginner's Investigation Roadmap<br><em>Final project link will be added when completed.</em></p>
+            <p><strong>Professional Portfolio:</strong><br><a href="https://lorenzojvillalobos.github.io/professional-portfolio/">Lorenzo Villalobos – Professional Portfolio</a></p>
+        </section>
     </main>
 
    <footer class="site-footer">
@@ -125,6 +218,3 @@
 </footer>
 
     <button id="backToTop" class="back-to-top" aria-label="Back to top">↑ Back to Top</button>
-    <script src="script.js"></script>
-</body>
-</html>
