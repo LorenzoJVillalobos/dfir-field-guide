@@ -736,3 +736,38 @@ a:focus-visible {
         margin: 0;
     }
 }
+.site-footer {
+    padding: 1.5rem 0;
+
+    color: #f5f1e8;
+    background-color: #2f4f3e;
+
+    text-align: center;
+
+    border-top: 4px solid #7a8f69;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.dfir-footer-links {
+    margin-top: 0.5rem !important;
+}
+
+.dfir-footer-links span {
+    margin: 0 0.5rem;
+    color: #7a8f69;
+}
+
+.site-footer a {
+    color: #d8cbb3;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: #f5f1e8;
+    text-decoration: underline;
+}
