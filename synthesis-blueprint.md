@@ -159,7 +159,7 @@ This project is part of a larger collection of work documenting my development i
 [DFIR Field Guide](https://lorenzojvillalobos.github.io/dfir-field-guide/)
 
 **Project 02:**  
-[DFIR First Steps: A Beginner's Investigation Roadmap](https://lorenzojvillalobos.github.io/dfir-field-guide/#dfir-first-steps)
+[DFIR First Steps: A Beginner's Investigation Roadmap](https://lorenzojvillalobos.github.io/dfir-field-guide/dfir-first-steps.html)
 
 **Professional Portfolio:**  
 [Lorenzo Villalobos – Professional Portfolio](https://lorenzojvillalobos.github.io/professional-portfolio/)
