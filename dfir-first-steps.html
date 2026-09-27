@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFIR First Steps | Beginner's Investigation Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="site-name" href="https://lorenzojvillalobos.github.io/professional-portfolio/">Lorenzo Villalobos</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="https://lorenzojvillalobos.github.io/professional-portfolio/">Home</a></li>
+                    <li><a href="https://lorenzojvillalobos.github.io/professional-portfolio/about.html">About</a></li>
+                    <li><a class="active" href="https://lorenzojvillalobos.github.io/professional-portfolio/projects.html">Projects</a></li>
+                    <li><a href="https://lorenzojvillalobos.github.io/professional-portfolio/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="values-banner" aria-label="Professional values">
+        <div class="container">
+            <p>Integrity <span>•</span> Service <span>•</span> Lifelong Learning</p>
+        </div>
+    </section>
+
+    <section class="project-hero">
+        <div class="container">
+            <p class="project-eyebrow">Digital Forensics &amp; Incident Response</p>
+            <h1>DFIR First Steps</h1>
+            <p>A Beginner's Investigation Roadmap</p>
+        </div>
+    </section>
+
+    <nav class="project-nav" aria-label="DFIR First Steps navigation">
+        <div class="container">
+            <a href="index.html">← DFIR Field Guide</a>
+            <a href="#overview">Overview</a>
+            <a href="#step-1">1. Start</a>
+            <a href="#step-2">2. Preserve</a>
+            <a href="#step-3">3. Triage</a>
+            <a href="#step-4">4. Examine</a>
+            <a href="#step-5">5. Interpret</a>
+            <a href="#step-6">6. Practice</a>
+            <a href="#sources">Sources</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>How a DFIR Investigation Fits Together</h2>
+            <p>
+                Digital Forensics and Incident Response can be difficult to approach as a beginner because there are so many tools, artifacts, frameworks, and technical specialties. It is easy to find a forensic tool before understanding when to use it or what question it is supposed to answer.
+            </p>
+            <p>
+                This guide provides a starting roadmap. It is not meant to replace an organization's incident-response procedures or a complete forensic training program. Instead, it shows how the major parts of an investigation connect: recognizing an incident, protecting evidence, performing triage, examining multiple evidence sources, interpreting what the evidence means, and developing those skills through practice.
+            </p>
+            <p>
+                A real investigation is rarely perfectly linear. Investigators may return to earlier steps as new facts are discovered. The important idea is that each action should support the same goal: develop reliable findings while protecting the integrity of the evidence and documenting how those findings were reached.
+            </p>
+
+            <div class="source-card">
+                <h3>The Roadmap</h3>
+                <p><strong>1. Recognize and respond.</strong> Determine what may have happened and establish the scope of the incident.</p>
+                <p><strong>2. Protect the evidence.</strong> Preserve potentially important data and document how it is handled.</p>
+                <p><strong>3. Triage affected systems.</strong> Identify which artifacts and systems deserve deeper examination.</p>
+                <p><strong>4. Examine and correlate evidence.</strong> Use endpoint, memory, file-system, log, and network evidence to reconstruct activity.</p>
+                <p><strong>5. Interpret attacker behavior.</strong> Move from individual artifacts toward an explanation of what the activity means.</p>
+                <p><strong>6. Practice the process.</strong> Build investigation skills with realistic datasets, labs, and repeatable documentation.</p>
+            </div>
+        </section>
+
+        <section id="step-1">
+            <h2>1. Recognizing an Incident and Starting the Investigation</h2>
+            <div class="source-card">
+                <p>
+                    A DFIR investigation begins before a forensic application is opened. Suspicious activity may first appear as an alert, an unusual login, a malware detection, a report from a user, unexpected network traffic, or some other indication that normal activity has changed.
+                </p>
+                <p>
+                    The first task is not to immediately search through everything on the affected system. Investigators need to understand what is known, what is still uncertain, which systems or accounts may be involved, and what actions are necessary to reduce additional harm. At the same time, they must avoid unnecessarily changing or destroying information that could later become evidence.
+                </p>
+                <p>
+                    Documentation starts here. Times, alerts, affected assets, actions taken, people involved, and important decisions should be recorded as the response develops. That record helps other responders understand what has already happened and gives the investigation a defensible timeline.
+                </p>
+                <h3>Questions to Ask</h3>
+                <ul>
+                    <li>What caused the activity to be identified as suspicious?</li>
+                    <li>Which users, accounts, systems, or services may be affected?</li>
+                    <li>Is the activity still occurring?</li>
+                    <li>What immediate actions are necessary to limit damage?</li>
+                    <li>What evidence could be lost if the system is changed, disconnected, or powered off?</li>
+                    <li>Who needs to be informed or involved in the response?</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> NIST SP 800-61 Rev. 3 and the CISA Cybersecurity Incident and Vulnerability Response Playbooks emphasize preparation, coordination, documentation, containment, recovery, and continuous improvement as parts of organized incident response.
+                </p>
+            </div>
+        </section>
+
+        <section id="step-2">
+            <h2>2. Protecting and Preserving Digital Evidence</h2>
+            <div class="source-card">
+                <p>
+                    Once potentially useful evidence is identified, the investigation depends on preserving that evidence as reliably as possible. Digital information can change quickly. Files can be modified, logs can roll over, temporary data can disappear, and volatile information in memory can be lost when a system is shut down.
+                </p>
+                <p>
+                    Preservation means more than making a copy. Investigators should document where the evidence came from, when and how it was collected, who handled it, and what tools or procedures were used. When forensic images or collected files are created, cryptographic hashes can be used to help demonstrate that the evidence being analyzed matches the data that was originally acquired.
+                </p>
+                <p>
+                    The goal is to perform analysis on forensic copies or collected artifacts whenever practical instead of repeatedly working from the original source. That reduces the risk of accidental changes and gives the investigator a known starting point if an analysis needs to be repeated.
+                </p>
+                <h3>Preservation Priorities</h3>
+                <ul>
+                    <li>Document the source and condition of the evidence.</li>
+                    <li>Consider volatile data before taking actions that may destroy it.</li>
+                    <li>Use appropriate forensic acquisition or collection methods.</li>
+                    <li>Record dates, times, tools, settings, and investigator actions.</li>
+                    <li>Use hashes or other verification methods where appropriate.</li>
+                    <li>Protect original evidence and perform analysis on working copies when possible.</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> NIST SP 800-86 and SWGDE acquisition guidance provide principles for collecting, preserving, examining, and documenting digital evidence.
+                </p>
+            </div>
+        </section>
+
+        <section id="step-3">
+            <h2>3. Beginning Endpoint Triage</h2>
+            <div class="source-card">
+                <p>
+                    A full forensic examination can contain an enormous amount of information. Triage helps investigators decide where to focus first. Instead of attempting to analyze every file immediately, the investigator looks for high-value artifacts that can quickly answer basic questions about user activity, execution, devices, persistence, or the time period surrounding the incident.
+                </p>
+                <p>
+                    On a Windows system, artifacts such as Prefetch, LNK files, USB history, UserAssist, event logs, browser history, and other operating-system records can provide clues about what programs ran, what files were accessed, what devices were connected, and what a user or process may have done.
+                </p>
+                <p>
+                    Tools such as KAPE can help collect and process targeted forensic artifacts. The important lesson for a beginner is that the tool does not decide what matters. The investigator starts with a question, identifies the artifact that may answer it, and then evaluates the results in context.
+                </p>
+                <h3>A Simple Triage Mindset</h3>
+                <ul>
+                    <li><strong>Question:</strong> What am I trying to determine?</li>
+                    <li><strong>Artifact:</strong> What evidence could answer that question?</li>
+                    <li><strong>Tool:</strong> What tool can collect or examine that evidence?</li>
+                    <li><strong>Context:</strong> Does the result agree with other evidence?</li>
+                    <li><strong>Next step:</strong> What new question does this finding create?</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> 13Cubed's Windows forensics material and KAPE demonstrate how common endpoint artifacts can be collected and examined during forensic triage.
+                </p>
+            </div>
+        </section>
+
+        <section id="step-4">
+            <h2>4. Examining and Connecting the Evidence</h2>
+            <div class="source-card">
+                <p>
+                    Triage may identify the most important leads, but a defensible conclusion usually requires more than one artifact. Different evidence sources show different parts of the same event, and the investigator's job is to connect them into a timeline that explains what occurred.
+                </p>
+                <p>
+                    Disk and file-system evidence can reveal files, metadata, deleted information, program traces, and user activity. Memory analysis can reveal running processes, active or recent network connections, loaded components, and information that may never have been written to disk. Network captures and logs can show communication between systems, external destinations, protocols, and timing. Authentication and operating-system logs may show which accounts or services were active at important points in the incident.
+                </p>
+                <p>
+                    Tools such as Autopsy and Volatility 3 help investigators examine different forms of evidence, but the strongest findings come from correlation. A suspicious process becomes more meaningful when its execution time aligns with a downloaded file, an authentication event, and an outbound network connection.
+                </p>
+                <h3>Correlate, Do Not Isolate</h3>
+                <ul>
+                    <li>Compare timestamps across different evidence sources.</li>
+                    <li>Look for the same user, process, file, host, or network indicator in multiple places.</li>
+                    <li>Separate confirmed facts from assumptions.</li>
+                    <li>Document both evidence that supports a conclusion and evidence that challenges it.</li>
+                    <li>Build a timeline that another investigator could follow.</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> Autopsy provides disk and file-system analysis capabilities, while Volatility 3 supports examination of volatile memory. Together with logs and network evidence, these sources can provide complementary views of an incident.
+                </p>
+            </div>
+        </section>
+
+        <section id="step-5">
+            <h2>5. Connecting Evidence to Attacker Behavior</h2>
+            <div class="source-card">
+                <p>
+                    Finding an unusual file, command, process, or connection is not the end of an investigation. Investigators need to explain what the evidence means. That requires moving from individual technical artifacts toward behavior, sequence, and intent.
+                </p>
+                <p>
+                    MITRE ATT&amp;CK provides a common way to describe adversary tactics and techniques. An investigator can use it to place observed actions into a larger behavioral context. For example, separate findings involving credential access, persistence, discovery, and command execution may represent different parts of the same intrusion rather than unrelated technical events.
+                </p>
+                <p>
+                    Detection formats such as Sigma show another useful connection between investigation and defense. Once investigators understand a behavior, they can describe patterns that may help defenders identify similar activity in logs later. In that way, DFIR findings can improve future detection instead of ending when the current case is closed.
+                </p>
+                <h3>Move from Artifact to Explanation</h3>
+                <ul>
+                    <li>What happened?</li>
+                    <li>When did it happen?</li>
+                    <li>Which account, process, or system was involved?</li>
+                    <li>How do multiple artifacts support the same conclusion?</li>
+                    <li>Which ATT&amp;CK tactics or techniques describe the observed behavior?</li>
+                    <li>What lessons from the investigation could improve future detection or response?</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> MITRE ATT&amp;CK provides a structured vocabulary for adversary behavior, while Sigma demonstrates how behaviors seen in logs can be expressed as reusable detection logic.
+                </p>
+            </div>
+        </section>
+
+        <section id="step-6">
+            <h2>6. Building Investigation Skills Through Practice</h2>
+            <div class="source-card">
+                <p>
+                    DFIR cannot be learned only by reading about tools. Investigation skill develops by working with evidence, forming questions, making mistakes, documenting findings, and repeating the process. Practice environments allow beginners to do this without risking production systems or real evidence.
+                </p>
+                <p>
+                    A useful progression is to begin with controlled datasets where the evidence and questions are clearly defined, then move into scenarios that require more independent analysis. NIST CFReDS provides forensic datasets that can be used to practice examination techniques, while platforms such as CyberDefenders provide investigation-oriented blue-team challenges built around logs, packet captures, disk images, memory, and other evidence.
+                </p>
+                <p>
+                    The goal of practice should not be memorizing tool buttons or commands. A stronger exercise is to write down the investigative question, record the evidence examined, explain why each artifact matters, and produce a short conclusion supported by the findings. That habit turns a technical exercise into investigation practice.
+                </p>
+                <h3>A Beginner Practice Loop</h3>
+                <ul>
+                    <li>Start with one clearly defined investigative question.</li>
+                    <li>Identify the evidence that could answer it.</li>
+                    <li>Use an appropriate tool to examine that evidence.</li>
+                    <li>Record the steps taken and important findings.</li>
+                    <li>Correlate the result with at least one additional source when possible.</li>
+                    <li>Write a short conclusion that separates facts from assumptions.</li>
+                    <li>Review what worked and what you would investigate next.</li>
+                </ul>
+                <p class="citation">
+                    <strong>Foundation:</strong> NIST CFReDS and CyberDefenders provide opportunities to practice forensic analysis and investigation skills using controlled evidence and realistic scenarios.
+                </p>
+            </div>
+        </section>
+
+        <section id="putting-it-together">
+            <h2>Putting the Roadmap Together</h2>
+            <p>
+                The most important idea in this guide is that DFIR is a process, not a collection of unrelated tools. Incident response identifies and manages the event. Evidence preservation protects the information needed to investigate it. Triage helps determine where to focus. Forensic examination develops facts from multiple sources. Behavioral analysis gives those facts meaning. Practice makes the entire process more repeatable and reliable.
+            </p>
+            <p>
+                Beginners do not need to master every forensic specialty before they can start learning. A better first goal is to understand the investigative flow and become comfortable asking good questions of the evidence. Tools will change, operating systems will change, and new forms of evidence will appear, but the need to preserve, document, examine, correlate, and explain evidence will remain central to DFIR work.
+            </p>
+            <div class="source-card">
+                <h3>Where to Go Next</h3>
+                <p>
+                    Use the <a href="index.html">DFIR Field Guide</a> to explore the individual resources, tools, frameworks, and hands-on training referenced throughout this roadmap. Then choose one investigation stage and practice it with a controlled dataset or lab.
+                </p>
+                <p>
+                    The goal is not to know every tool. The goal is to develop a repeatable way to investigate what happened and explain how the evidence supports your conclusion.
+                </p>
+            </div>
+        </section>
+
+        <section id="sources">
+            <h2>Sources Used in This Roadmap</h2>
+            <p>
+                This synthesis was developed from sources collected and evaluated in the <a href="index.html#sources">DFIR Field Guide</a>. The main resources used to build the investigation roadmap are listed below.
+            </p>
+            <div class="source-card">
+                <p><strong>Incident Response:</strong> NIST SP 800-61 Rev. 3; CISA Cybersecurity Incident and Vulnerability Response Playbooks.</p>
+                <p><strong>Evidence Preservation:</strong> NIST SP 800-86; SWGDE Best Practices for Computer Forensic Acquisition.</p>
+                <p><strong>Endpoint Triage:</strong> 13Cubed Introduction to Windows Forensics; KAPE.</p>
+                <p><strong>Forensic Examination:</strong> Autopsy; Volatility 3.</p>
+                <p><strong>Behavior and Detection:</strong> MITRE ATT&amp;CK; Sigma.</p>
+                <p><strong>Hands-On Practice:</strong> NIST CFReDS Hacking Case; CyberDefenders Blue Team Labs.</p>
+                <a class="resource-link" href="index.html#sources">View the Full DFIR Resource Collection</a>
+            </div>
+        </section>
+
+        <section id="connections">
+            <h2>Project Connections</h2>
+            <p>This project is part of a larger collection of work documenting my development in Digital Forensics and Incident Response.</p>
+            <p><strong>Project 01:</strong><br><a href="index.html">DFIR Field Guide</a></p>
+            <p><strong>Project 02:</strong><br>DFIR First Steps: A Beginner's Investigation Roadmap</p>
+            <p><strong>Planning Document:</strong><br><a href="synthesis-blueprint.html">Synthesis Blueprint</a></p>
+            <p><strong>Professional Portfolio:</strong><br><a href="https://lorenzojvillalobos.github.io/professional-portfolio/">Lorenzo Villalobos – Professional Portfolio</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                © 2026 Lorenzo Villalobos
+                <br>
+                Building Safer Communities • Preparing for a Secure Digital Future
+            </p>
+            <p class="dfir-footer-links">
+                <a href="index.html">DFIR Field Guide</a>
+                <span>•</span>
+                <a href="dfir-first-steps.html">DFIR First Steps</a>
+                <span>•</span>
+                <a href="synthesis-blueprint.html">Synthesis Blueprint</a>
+                <span>•</span>
+                <a href="https://lorenzojvillalobos.github.io/professional-portfolio/">Professional Portfolio</a>
+            </p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑ Back to Top</button>
+    <script src="script.js"></script>
+</body>
+</html>
